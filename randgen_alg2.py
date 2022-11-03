@@ -12,10 +12,10 @@ pool_total=np.zeros(maxval)
 
 while cnt<howmany:
 	cnt+=1
-	next_var=((next_var**0.5)*maxval)%maxval
+	next_var=((((next_var+1)**0.5)*((next_var-1)**0.5)/(next_var**0.5))*maxval)%maxval
 	print(int(next_var))
 	pool_total[int(next_var)]+=1
-#print("Hello world")
+
 for i in range(len(pool_total)):
-        if pool_total[i]>1:
-                print("{}: {}".format(i,pool_total[i]))
+	if pool_total[i]>1:
+		print("{}: {}".format(i,pool_total[i]))
