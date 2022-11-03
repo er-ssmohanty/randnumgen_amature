@@ -1,4 +1,3 @@
 #! /usr/bin/python3
-import sys
-print(sys.argv[1])
-
+import robust_randgen as rr
+rr.randnum_gen(100,10)
