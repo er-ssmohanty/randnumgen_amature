@@ -13,7 +13,7 @@ pool_total=np.zeros(maxval)
 
 while cnt<howmany:
 	cnt+=1
-	next_var=(((((next_var+1)**2)+((next_var-1)**2)+(next_var**2))/3)*maxval)%maxval
+	next_var=(((((next_var+3.141592653589793)**2)+((next_var-3.141592653589793)**2)+(next_var**2))/3)*maxval)%maxval
 	print(int(next_var))
 	pool_total[int(next_var)]+=1
 
