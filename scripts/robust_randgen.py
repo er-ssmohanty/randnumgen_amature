@@ -8,7 +8,7 @@ def main():
 	    # if pool_total[i]>1:
 		    # print("{}: {}".format(i,pool_total[i]))
 
-def randnum_gen(seed,maxcount):
+def randnum_gen(seed,maxcount,outputype="int",toprint=False):
     import numpy as np
     real_seed=(abs(seed**0.01)*1000000)%1000000
     cnt=0
@@ -21,10 +21,13 @@ def randnum_gen(seed,maxcount):
         cnt+=1
         next_var=(((((next_var+3.141592653589793)**2)+((next_var-3.141592653589793)\
             **2)+(next_var**2))/3)*maxval)%maxval
+    if toprint:
         print(int(next_var))
-
+    if outputype=="int":
+        pool_list.append(int(next_var))
+    else:
         pool_list.append(next_var)
-        pool_freq[int(next_var)]+=1
+    pool_freq[int(next_var)]+=1
     return pool_list, pool_freq
 
 if __name__ == "__main__":
